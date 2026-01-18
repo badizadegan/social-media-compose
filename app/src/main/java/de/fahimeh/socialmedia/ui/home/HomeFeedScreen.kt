@@ -53,6 +53,8 @@ fun HomeFeedScreen(){
                 style = MaterialTheme.typography.titleMedium,
                 modifier = Modifier.padding(16.dp)
             )
+
+            StoriesRow()
         }
     }
 }
