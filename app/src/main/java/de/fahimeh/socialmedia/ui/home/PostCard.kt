@@ -43,6 +43,7 @@ fun PostCard(
 ) {
     var isLiked by remember { mutableStateOf(false) }
     var likeCount by remember { mutableIntStateOf(likes) }
+    var showOptions by remember { mutableStateOf(false) }
 
     Column(
         modifier = modifier
@@ -74,10 +75,12 @@ fun PostCard(
                 modifier = Modifier.weight(1f)
             )
 
-            Icon(
-                imageVector = Icons.Default.MoreVert,
-                contentDescription = "More"
-            )
+            IconButton(onClick = { showOptions = true }) {
+                Icon(
+                    imageVector = Icons.Default.MoreVert,
+                    contentDescription = "More"
+                )
+            }
         }
 
         // Post Image placeholder
@@ -133,5 +136,14 @@ fun PostCard(
             text = "$username $description",
             modifier = Modifier.padding(horizontal = 12.dp)
         )
+
+        if (showOptions) {
+            PostOptionsSheet(
+                onDismiss = { showOptions = false },
+                onReport = { showOptions = false },
+                onShare = { showOptions = false },
+                onCopyLink = { showOptions = false }
+            )
+        }
     }
 }
