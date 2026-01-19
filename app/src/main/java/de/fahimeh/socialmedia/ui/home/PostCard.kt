@@ -32,7 +32,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import de.fahimeh.socialmedia.ui.theme.SocialMediaComposeTheme
 
 @Composable
 fun PostCard(
@@ -145,5 +147,17 @@ fun PostCard(
                 onCopyLink = { showOptions = false }
             )
         }
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun PostCardPreview() {
+    SocialMediaComposeTheme {
+        PostCard(
+            username = "alex_dev",
+            likes = 120,
+            description = "Sample post description"
+        )
     }
 }
