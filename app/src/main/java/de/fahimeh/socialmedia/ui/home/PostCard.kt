@@ -41,6 +41,9 @@ fun PostCard(
     username: String,
     likes: Int,
     description: String,
+    onReport: () -> Unit,
+    onShare: () -> Unit,
+    onCopyLink: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     var isLiked by remember { mutableStateOf(false) }
@@ -142,9 +145,18 @@ fun PostCard(
         if (showOptions) {
             PostOptionsSheet(
                 onDismiss = { showOptions = false },
-                onReport = { showOptions = false },
-                onShare = { showOptions = false },
-                onCopyLink = { showOptions = false }
+                onReport = {
+                    showOptions = false
+                    onReport()
+                           },
+                onShare = {
+                    showOptions = false
+                    onShare()
+                          },
+                onCopyLink = {
+                    showOptions = false
+                    onCopyLink()
+                }
             )
         }
     }
@@ -157,7 +169,10 @@ fun PostCardPreview() {
         PostCard(
             username = "alex_dev",
             likes = 120,
-            description = "Sample post description"
+            description = "Sample post description",
+            onReport = {},
+            onShare = {},
+            onCopyLink = {}
         )
     }
 }
