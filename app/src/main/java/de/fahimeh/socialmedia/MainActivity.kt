@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import de.fahimeh.socialmedia.ui.home.HomeFeedScreen
+import de.fahimeh.socialmedia.ui.navigation.AppNavGraph
 import de.fahimeh.socialmedia.ui.theme.SocialMediaComposeTheme
 
 class MainActivity : ComponentActivity() {
@@ -13,7 +13,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             SocialMediaComposeTheme {
-                    HomeFeedScreen()
+                AppNavGraph()
             }
         }
     }
