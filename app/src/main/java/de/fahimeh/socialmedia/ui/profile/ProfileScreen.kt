@@ -41,12 +41,14 @@ fun ProfileScreen(
                 .padding(padding)
         ) {
             ProfileHeader(
-                name = "Anna Taylor",
-                username = "anna_taylor",
-                posts = 112,
-                followers = 2500,
-                following = 350
-            )
+                    name = "Anna Taylor",
+                    username = "anna_taylor",
+                    posts = 112,
+                    followers = 2500,
+                    following = 350
+                )
+
+            ProfileGrid(itemsCount = 12)
         }
     }
 }
