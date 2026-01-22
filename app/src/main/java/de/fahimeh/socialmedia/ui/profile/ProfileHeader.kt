@@ -45,7 +45,7 @@ fun ProfileHeader(
             modifier = Modifier
                 .size(96.dp)
                 .clip(CircleShape)
-                .background(Color.LightGray)
+                .background(MaterialTheme.colorScheme.surfaceVariant)
         )
 
         Spacer(modifier = Modifier.height(12.dp))

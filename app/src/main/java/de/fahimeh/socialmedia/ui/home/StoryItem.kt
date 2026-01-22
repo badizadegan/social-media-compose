@@ -33,7 +33,7 @@ fun StoryItem(
             modifier = Modifier
                 .size(60.dp)
                 .clip(CircleShape)
-                .background(Color.LightGray)
+                .background(MaterialTheme.colorScheme.surfaceVariant)
         )
 
         Spacer(modifier = Modifier.height(6.dp))

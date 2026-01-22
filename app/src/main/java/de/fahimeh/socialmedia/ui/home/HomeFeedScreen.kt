@@ -76,7 +76,7 @@ fun HomeFeedScreen(
             Text(
                 text = "Stories",
                 style = MaterialTheme.typography.titleMedium,
-                modifier = Modifier.padding(16.dp)
+                modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp)
             )
 
             StoriesRow()
