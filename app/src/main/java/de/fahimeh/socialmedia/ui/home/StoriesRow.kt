@@ -10,14 +10,7 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun StoriesRow() {
 
-    val stories = listOf(
-        "Alex",
-        "Maria",
-        "John",
-        "Sara",
-        "Emma",
-        "David"
-    )
+    val stories = HomeDummyData.stories
 
     LazyRow(
         contentPadding = PaddingValues(horizontal = 16.dp),

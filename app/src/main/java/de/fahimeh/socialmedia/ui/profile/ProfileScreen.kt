@@ -48,7 +48,7 @@ fun ProfileScreen(
                     following = 350
                 )
 
-            ProfileGrid(itemsCount = 12)
+            ProfileGrid(itemsCount = ProfileDummyData.gridCount)
         }
     }
 }

@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Search
@@ -32,6 +33,7 @@ fun HomeFeedScreen(
     onOpenProfile: () -> Unit
 ) {
 
+    val posts = HomeDummyData.posts
     val snackbarHostState = remember { SnackbarHostState() }
     val scope = rememberCoroutineScope()
 
@@ -83,11 +85,11 @@ fun HomeFeedScreen(
                 contentPadding = PaddingValues(16.dp),
                 verticalArrangement = Arrangement.spacedBy(16.dp)
             ) {
-                items(3) {
+                items(posts) { post ->
                     PostCard(
-                        username = "alex_dev",
-                        likes = 128,
-                        description = "This is a sample post description",
+                        username = post.username,
+                        likes = post.likes,
+                        description = post.description,
                         onReport = {
                             scope.launch {
                                 snackbarHostState.showSnackbar("Reported")

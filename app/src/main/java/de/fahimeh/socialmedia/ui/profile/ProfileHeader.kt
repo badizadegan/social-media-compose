@@ -21,7 +21,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import de.fahimeh.socialmedia.ui.theme.SocialMediaComposeTheme
 
 @Composable
 fun ProfileHeader(
@@ -86,5 +88,19 @@ fun ProfileHeader(
                 Text("Logout")
             }
         }
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun ProfileHeaderPreview() {
+    SocialMediaComposeTheme {
+        ProfileHeader(
+            name = "Anna Taylor",
+            username = "anna_taylor",
+            posts = 112,
+            followers = 2500,
+            following = 350
+        )
     }
 }
