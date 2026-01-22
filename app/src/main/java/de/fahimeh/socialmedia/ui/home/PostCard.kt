@@ -32,9 +32,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import coil.compose.AsyncImage
 import de.fahimeh.socialmedia.ui.theme.SocialMediaComposeTheme
 
 @Composable
@@ -42,6 +44,8 @@ fun PostCard(
     username: String,
     likes: Int,
     description: String,
+    userImageUrl: String,
+    postImageUrl: String,
     onReport: () -> Unit,
     onShare: () -> Unit,
     onCopyLink: () -> Unit,
@@ -66,11 +70,13 @@ fun PostCard(
                 .padding(12.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Box(
+            AsyncImage(
+                model = userImageUrl,
+                contentDescription = "User avatar",
+                contentScale = ContentScale.Crop,
                 modifier = Modifier
                     .size(40.dp)
                     .clip(CircleShape)
-                    .background(MaterialTheme.colorScheme.surfaceVariant)
             )
 
             Spacer(modifier = Modifier.width(8.dp))
@@ -90,11 +96,13 @@ fun PostCard(
         }
 
         // Post Image placeholder
-        Box(
+        AsyncImage(
+            model = postImageUrl,
+            contentDescription = "Post image",
+            contentScale = ContentScale.Crop,
             modifier = Modifier
                 .fillMaxWidth()
                 .height(220.dp)
-                .background(MaterialTheme.colorScheme.surfaceVariant)
         )
 
         // Actions
@@ -172,6 +180,8 @@ fun PostCardPreview() {
             username = "alex_dev",
             likes = 120,
             description = "Sample post description",
+            userImageUrl = "",
+            postImageUrl = "",
             onReport = {},
             onShare = {},
             onCopyLink = {}

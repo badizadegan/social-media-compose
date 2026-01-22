@@ -16,8 +16,11 @@ fun StoriesRow() {
         contentPadding = PaddingValues(horizontal = 16.dp),
         horizontalArrangement = Arrangement.spacedBy(12.dp)
     ) {
-        items(stories) { name ->
-            StoryItem(name = name)
+        items(stories) { story ->
+            StoryItem(
+                name = story.name,
+                imageUrl = story.imageUrl
+            )
         }
     }
 }

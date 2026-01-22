@@ -45,10 +45,12 @@ fun ProfileScreen(
                     username = "anna_taylor",
                     posts = 112,
                     followers = 2500,
-                    following = 350
-                )
+                    following = 350,
+                    imageUrl = "https://i.pravatar.cc/150?img=32"
 
-            ProfileGrid(itemsCount = ProfileDummyData.gridCount)
+            )
+
+            ProfileGrid(imageUrls = ProfileDummyData.gridImages)
         }
     }
 }

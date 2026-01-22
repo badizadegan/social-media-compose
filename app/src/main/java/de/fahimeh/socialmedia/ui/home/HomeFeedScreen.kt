@@ -90,6 +90,8 @@ fun HomeFeedScreen(
                         username = post.username,
                         likes = post.likes,
                         description = post.description,
+                        userImageUrl = post.userImageUrl,
+                        postImageUrl = post.postImageUrl,
                         onReport = {
                             scope.launch {
                                 snackbarHostState.showSnackbar("Reported")

@@ -20,9 +20,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import coil.compose.AsyncImage
 import de.fahimeh.socialmedia.ui.theme.SocialMediaComposeTheme
 
 @Composable
@@ -31,7 +33,8 @@ fun ProfileHeader(
     username: String,
     posts: Int,
     followers: Int,
-    following: Int
+    following: Int,
+    imageUrl: String
 ) {
     Column(
         modifier = Modifier
@@ -41,11 +44,13 @@ fun ProfileHeader(
     ) {
 
         // Profile image placeholder
-        Box(
+        AsyncImage(
+            model = imageUrl,
+            contentDescription = "Profile image",
+            contentScale = ContentScale.Crop,
             modifier = Modifier
                 .size(96.dp)
                 .clip(CircleShape)
-                .background(MaterialTheme.colorScheme.surfaceVariant)
         )
 
         Spacer(modifier = Modifier.height(12.dp))
@@ -100,7 +105,8 @@ fun ProfileHeaderPreview() {
             username = "anna_taylor",
             posts = 112,
             followers = 2500,
-            following = 350
+            following = 350,
+            imageUrl = ""
         )
     }
 }
