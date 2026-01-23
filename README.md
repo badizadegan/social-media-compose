@@ -21,6 +21,16 @@ Dieses Projekt zeigt wiederverwendbare UI-Komponenten, saubere Struktur und mode
 
 ---
 
+## 📸 Screenshots
+
+### Home Feed
+![Home Feed](screenshots/home.png)
+
+### Profile Screen
+![Profile Screen](screenshots/profile.png)
+
+---
+
 ## 🛠️ Tech Stack
 
 - **Kotlin**
